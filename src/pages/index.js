@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { AppHeader } from '../components/TitleText/AppHeader';
-import { CheckContent } from '../components/TitleText/CheckContent';
+import { AppHeader } from '../components/AppHeader/AppHeader';
+import { CheckContent } from '../components/CheckContent/CheckContent';
+import { Counter } from '../components/counter/Counter';
 import { TitleText } from '../components/TitleText/TitleText';
 
 const IndexPage = () => (
@@ -9,6 +10,7 @@ const IndexPage = () => (
     <TitleText />
     <AppHeader />
     <CheckContent />
+    <Counter />
   </>
 );
 
