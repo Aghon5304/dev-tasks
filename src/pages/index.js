@@ -3,6 +3,7 @@ import React from 'react';
 import { AppHeader } from '../components/AppHeader/AppHeader';
 import { CheckContent } from '../components/CheckContent/CheckContent';
 import { Counter } from '../components/counter/Counter';
+import DynamicList from '../components/DynamicList/DynamicList';
 import { TitleText } from '../components/TitleText/TitleText';
 
 const IndexPage = () => (
@@ -11,6 +12,7 @@ const IndexPage = () => (
     <AppHeader />
     <CheckContent />
     <Counter />
+    <DynamicList n={4} />
   </>
 );
 
