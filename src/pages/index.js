@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AppHeader } from '../components/TitleText/appheader';
+import { AppHeader } from '../components/TitleText/AppHeader';
 import { CheckContent } from '../components/TitleText/CheckContent';
 import { TitleText } from '../components/TitleText/TitleText';
 
