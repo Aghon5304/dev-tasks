@@ -4,7 +4,27 @@ import { AppHeader } from '../components/AppHeader/AppHeader';
 import { CheckContent } from '../components/CheckContent/CheckContent';
 import { Counter } from '../components/counter/Counter';
 import DynamicList from '../components/DynamicList/DynamicList';
+import TaskList from '../components/TaskList/TaskList'
 import { TitleText } from '../components/TitleText/TitleText';
+
+export const sampleTasks = [
+  {
+    id: 1, 
+    text: 'Task 1', 
+    completed: true,
+  },
+  {
+    id: 2, 
+    text: 'Task 2', 
+    completed: false,
+  },
+  {
+    id: 3, 
+    text: 'Task 3', 
+    completed: false,
+  }
+]
+
 
 const IndexPage = () => (
   <>
@@ -13,6 +33,7 @@ const IndexPage = () => (
     <CheckContent />
     <Counter />
     <DynamicList n={4} />
+    <TaskList />
   </>
 );
 
