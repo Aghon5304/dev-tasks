@@ -2,18 +2,29 @@ import React,{useState} from "react";
 
 import { sampleTasks } from "../../pages";
 
-function TaskList(){
-    const [tasks,setTasks] = useState(sampleTasks);
+const TaskList = ()=>{
+    let [tasks,setTasks] = useState(sampleTasks);
 
-    /*function setTasks({task}){
-        tasks.id===task.id? (tasks.completed = !tasks.completed):()
-    }*/
+    const handleCheckbox = (index) =>{
+        let newTasks=[...tasks];
+        newTasks[index].completed=!newTasks[index].completed;
+        setTasks(newTasks);
+    }
+
+    const handleClick = (index)=>{
+        let newTasks = [...tasks];
+        newTasks.splice(index,1)
+        setTasks(newTasks)
+    }
+
     const taskElements = tasks.map((task,index)=>(
         <li key={index} style={task.completed ? {textDecoration:"line-through", color:"red"}:{textDecoration:"none", color:"green"}}>
+            <input type="checkbox" checked={task.completed} onChange={()=>handleCheckbox(index)}/>
             {task.text}
-            <input type="checkbox" checked={task.completed} /*onChange={setTasks(task)}*/ />
+            <button onClick={()=>handleClick(index)}>Remove</button>
         </li>
     ));
+
     return(
             <ol>{taskElements}</ol>
     )
