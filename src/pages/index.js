@@ -8,7 +8,7 @@ import { SimpleForm } from '../components/SimpleForm/SimpleForm';
 import TaskList from '../components/TaskList/TaskList'
 import { TitleText } from '../components/TitleText/TitleText';
 
-export const sampleTasks = [
+const sampleTasks = [
   {
     id: 1, 
     text: 'Task 1', 
@@ -34,7 +34,7 @@ const IndexPage = () => (
     <CheckContent />
     <Counter />
     <DynamicList n={4} />
-    <TaskList />
+    <TaskList sampleTasks = {sampleTasks}/>
     <SimpleForm />
   </>
 );

@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import React,{useState} from "react";
 
-import { sampleTasks } from "../../pages";
 
-const TaskList = ()=>{
-    let [tasks,setTasks] = useState(sampleTasks);
+const TaskList = (props)=>{
 
+    let [tasks,setTasks] = useState(props.sampleTasks);
+    
     const handleCheckbox = (index) =>{
         let newTasks=[...tasks];
         newTasks[index].completed=!newTasks[index].completed;
@@ -16,7 +17,6 @@ const TaskList = ()=>{
         newTasks.splice(index,1)
         setTasks(newTasks)
     }
-
     const taskElements = tasks.map((task,index)=>(
         <li key={index} style={task.completed ? {textDecoration:"line-through", color:"red"}:{textDecoration:"none", color:"green"}}>
             <input type="checkbox" checked={task.completed} onChange={()=>handleCheckbox(index)}/>
@@ -24,9 +24,13 @@ const TaskList = ()=>{
             <button onClick={()=>handleClick(index)}>Remove</button>
         </li>
     ));
+    
 
     return(
             <ol>{taskElements}</ol>
     )
+}
+TaskList.propTypes = {
+    sampleTasks: PropTypes.array.isRequired
 }
 export default TaskList
